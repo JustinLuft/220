@@ -1,5 +1,5 @@
 """
-Name: Justtin Luft
+Name: Justin Luft
 first.py
 """
 
