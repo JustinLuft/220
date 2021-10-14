@@ -68,6 +68,7 @@ def triangle():
     perimeter = a + b + c
     area_txt = Text(Point(230, 20), "The area is " + str(area) + " The perimeter is " + str(perimeter))
     area_txt.draw(win)
+    print(p1, p2, p3)
     # and display its area in the graphics window.
     # Wait for another click to exit
     win.getMouse()
@@ -179,10 +180,9 @@ def another_series():
         print(num, end= " ")
     print(total)
 
-
 def main():
     # target()
-    # triangle()
+    triangle()
     # color_shape()
     # process_string()
     # process_list()
