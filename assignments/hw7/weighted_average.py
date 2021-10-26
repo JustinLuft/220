@@ -39,7 +39,7 @@ def weighted_average(in_file_name, out_file_name):
         acc2 = acc2 + 1
     classavg1 = classavg / acc2
     classavgrounded = round(classavg1, 1)
-    output.write("Class Average: " + str(classavgrounded))
+    output.write("Class average: " + str(classavgrounded))
 
 
 
