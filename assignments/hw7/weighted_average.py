@@ -33,11 +33,13 @@ def weighted_average(in_file_name, out_file_name):
                 grade = thegrade * theweight
                 gradeacc = gradeacc + grade
                 gradefinal = gradeacc / 100
-            output.write(str(name) + "'s average: " + str(round(gradefinal,1)) + "\n")
+                gradefinalrounded = round(gradefinal, 1)
+            output.write(str(name) + "'s average: " + str(gradefinalrounded) + "\n")
             classavg = classavg + float(gradefinal)
         acc2 = acc2 + 1
     classavg1 = classavg / acc2
-    output.write("Class Average: " + str(classavg1))
+    classavgrounded = round(classavg1, 1)
+    output.write("Class Average: " + str(classavgrounded))
 
 
 
