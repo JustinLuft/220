@@ -21,9 +21,9 @@ def weighted_average(in_file_name, out_file_name):
             acc1 = acc1 + int(num)
         if acc1 != 100:
             if acc1 > 100:
-                output.write(str(name) + "'s average: " + "Error: The weights are more than 100" + "\n")
+                output.write(str(name) + "'s average: " + "Error: The weights are more than 100." + "\n")
             else:
-                output.write(str(name) + "'s average: " + "Error: The weights are less than 100" + "\n")
+                output.write(str(name) + "'s average: " + "Error: The weights are less than 100." + "\n")
             acc2 = acc2 - 1
         else:
             for num in gradeval[0::2]:
@@ -33,7 +33,7 @@ def weighted_average(in_file_name, out_file_name):
                 grade = thegrade * theweight
                 gradeacc = gradeacc + grade
                 gradefinal = gradeacc / 100
-            output.write(str(name) + "'s average: " + str(gradefinal) + "\n")
+            output.write(str(name) + "'s average: " + str(round(gradefinal,1)) + "\n")
             classavg = classavg + float(gradefinal)
         acc2 = acc2 + 1
     classavg1 = classavg / acc2
