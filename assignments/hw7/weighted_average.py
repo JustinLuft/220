@@ -11,6 +11,7 @@ def weighted_average(in_file_name, out_file_name):
     classavg = 0
     acc2 = 0
     for line in infile:
+        acc3 = -1
         acc1 = 0
         gradeacc = 0
         split1 = line.split(':')
@@ -27,9 +28,10 @@ def weighted_average(in_file_name, out_file_name):
             acc2 = acc2 - 1
         else:
             for num in gradeval[0::2]:
-                num2 = int(gradeval.index(num)) + 1
+                acc3 = acc3 + 2
+                num2 = gradeval[acc3]
                 theweight = int(num)
-                thegrade = int(gradeval[num2])
+                thegrade = int(num2)
                 grade = thegrade * theweight
                 gradeacc = gradeacc + grade
                 gradefinal = gradeacc / 100
