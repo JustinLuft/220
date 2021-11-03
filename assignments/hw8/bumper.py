@@ -38,62 +38,73 @@ def didCollide(circle1, circle2):
 
 
 def main():
+    random1 = randint(0, 255)
+    random2 = randint(0, 255)
+    random3 = randint(0, 255)
+    red = int(random1)
+    green = int(random2)
+    blue = int(random3)
+    color = color_rgb(red, green, blue)
     win = GraphWin("Bumpers", 500, 500)
-    point1 = 250
-    point2 = 250
+    win.setBackground(color)
+
+    point1 = 150
+    point2 = 150
     point3 = 350
     point4 = 350
     circle1 = Circle(Point(point1, point2), 30)
     circle1.draw(win)
-    circle1.setFill("blue")
-    circle2 = Circle(Point(point1, point2), 30)
+    random1 = randint(0, 255)
+    random2 = randint(0, 255)
+    random3 = randint(0, 255)
+    red = int(random1)
+    green = int(random2)
+    blue = int(random3)
+    color = color_rgb(red, green, blue)
+    circle1.setFill(color)
+
+    circle2 = Circle(Point(point3, point4), 30)
     circle2.draw(win)
-    circle2.setFill("red")
+    random1 = randint(0, 255)
+    random2 = randint(0, 255)
+    random3 = randint(0, 255)
+    red = int(random1)
+    green = int(random2)
+    blue = int(random3)
+    color = color_rgb(red, green, blue)
+    circle2.setFill(color)
+
     while 1 == 1:
         #circle 1
         print("redo")
-        xory_1 = randint(-100, 100)
-        xory1 = xory_1 / 100
-        xory_2 = randint(-100, 100)
-        xory2 = xory_2 / 100
+        xory1 = randint(-5, 5)
+        xory2 = randint(-5, 5)
 
-        xory_3 = randint(-100, 100)
-        xory3 = xory_3 / 100
-        xory_4 = randint(-100, 100)
-        xory4 = xory_4 / 100
-        while hit_vertical(circle2, win) and hit_horizontal(circle2, win) and hit_vertical(circle1, win) and hit_horizontal(circle1, win) == True:
+        xory3 = randint(-5, 5)
+        xory4 = randint(-5, 5)
+        while True:
+            if didCollide(circle1, circle2) == False:
+                xory1 = xory1 * -1
+                xory2 = xory2 * -1
+                xory3 = xory3 * -1
+                xory4 = xory4 * -1
+            if hit_vertical(circle1, win) == False:
+                xory1 = xory1 * -1
+            if hit_horizontal(circle1, win) == False:
+                xory2 = xory2 * -1
+            if hit_vertical(circle2, win) == False:
+                xory3 = xory3 * -1
+            if hit_horizontal(circle2, win) == False:
+                xory4 = xory4 * -1
+            circle1.move(xory1, 0)
+            circle1.move(0, xory2)
+            circle2.move(xory3, 0)
+            circle2.move(0, xory4)
             circle2.move(xory3, 0)
             circle2.move(0, xory4)
             circle1.move(xory1, 0)
             circle1.move(0, xory2)
-        while hit_vertical(circle2, win) and hit_vertical(circle1, win) == False:
-            xoryneg = xory3 * -1
-            circle2.move(xoryneg, 0)
-            xoryneg = xory1 * -1
-            circle1.move(xoryneg, 0)
-        while hit_horizontal(circle1, win) and hit_horizontal(circle2, win) == False:
-            xoryneg = xory2 * -1
-            circle1.move(0, xoryneg)
-            xoryneg = xory4 * -1
-            circle2.move(0, xoryneg)
 
-        while hit_vertical(circle2, win) and hit_horizontal(circle2, win) == True:
-            circle2.move(xory3, 0)
-            circle2.move(0, xory4)
-        while hit_vertical(circle2, win) == False:
-            xoryneg = xory3 * -1
-            circle2.move(xoryneg, 0)
-        while hit_horizontal(circle2, win) == False:
-            xoryneg = xory4 * -1
-            circle2.move(0, xoryneg)
 
-        while hit_vertical(circle1, win) and hit_horizontal(circle1, win) == True:
-            circle1.move(xory1, 0)
-            circle1.move(0, xory2)
-        while hit_vertical(circle1, win) == False:
-            xoryneg = xory1 * -1
-            circle1.move(xoryneg, 0)
-        while hit_horizontal(circle1, win) == False:
-            xoryneg = xory2 * -1
-            circle1.move(0, xoryneg)
+
 main()
