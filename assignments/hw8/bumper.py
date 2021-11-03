@@ -1,10 +1,13 @@
 """
-
+Justin Luft
+bumper.py
+I certify that this assignment is entirely my own work.
 """
 import math
 from random import *
 from graphics import *
 from time import *
+
 def hit_vertical(circle, window):
     circlex = circle.getP1()
     circlexreal = circlex.getX()
@@ -34,9 +37,6 @@ def didCollide(circle1, circle2):
         return False
     else:
         return True
-
-
-
 def main():
     random1 = randint(0, 255)
     random2 = randint(0, 255)
@@ -104,7 +104,4 @@ def main():
             circle2.move(0, xory4)
             circle1.move(xory1, 0)
             circle1.move(0, xory2)
-
-
-
 main()
