@@ -37,6 +37,10 @@ def did_collide(circle1, circle2):
         return True
     else:
         return False
+def get_random(int, move_amount):
+    move_amount_neg = move_amount * -1
+    int = randint(move_amount_neg, move_amount)
+    return int
 def main():
     random1 = randint(0, 255)
     random2 = randint(0, 255)
@@ -48,11 +52,11 @@ def main():
     win = GraphWin("Bumpers", 500, 500)
     win.setBackground(color)
 
-    point1 = randint(0, 500)
-    point2 = randint(0, 500)
-    point3 = randint(0, 500)
-    point4 = randint(0, 500)
-    radius1 = randint(0, 50)
+    point1 = randint(0, 470)
+    point2 = randint(0, 470)
+    point3 = randint(0, 470)
+    point4 = randint(0, 470)
+    radius1 = 30
     circle1 = Circle(Point(point1, point2), radius1)
     circle1.draw(win)
     random1 = randint(0, 255)
@@ -64,7 +68,7 @@ def main():
     color = color_rgb(red, green, blue)
     circle1.setFill(color)
 
-    radius2 = randint(0, 50)
+    radius2 = 30
     circle2 = Circle(Point(point3, point4), radius2)
     circle2.draw(win)
     random1 = randint(0, 255)
@@ -75,15 +79,18 @@ def main():
     blue = int(random3)
     color = color_rgb(red, green, blue)
     circle2.setFill(color)
-
+    xory1 = 0
+    xory2 = 0
+    xory3 = 0
+    xory4 = 0
     while 1 == 1:
         #circle 1
-        print("redo")
-        xory1 = randint(-5, 5)
-        xory2 = randint(-5, 5)
+        move_amount = randint(0, 10)
+        xory1 = get_random(xory1, move_amount)
+        xory2 = get_random(xory2, move_amount)
 
-        xory3 = randint(-5, 5)
-        xory4 = randint(-5, 5)
+        xory3 = get_random(xory3, move_amount)
+        xory4 = get_random(xory4, move_amount)
         while True:
             if did_collide(circle1, circle2) == True:
                 xory1 = xory1 * -1
