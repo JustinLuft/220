@@ -12,20 +12,20 @@ def hit_vertical(circle, window):
     circlex = circle.getP1()
     circlexreal = circlex.getX()
     circler = circle.getRadius()
-    avoid = 500 - 2 * circler
+    avoid = 600 - 2 * circler
     if circlexreal < avoid and circlexreal > 0:
-        return True
-    else:
         return False
+    else:
+        return True
 def hit_horizontal(circle, window):
     circley = circle.getP1()
     circleyreal = circley.getY()
     circler = circle.getRadius()
-    avoid = 500 - 2 * circler
+    avoid = 400 - 2 * circler
     if circleyreal < avoid and circleyreal > 0:
-        return True
-    else:
         return False
+    else:
+        return True
 def did_collide(circle1, circle2):
     p1 = circle1.getP1()
     p3 = circle2.getP1()
@@ -37,7 +37,7 @@ def did_collide(circle1, circle2):
         return True
     else:
         return False
-def get_random(int, move_amount):
+def get_random(move_amount):
     move_amount_neg = move_amount * -1
     int = randint(move_amount_neg, move_amount)
     return int
@@ -49,7 +49,7 @@ def main():
     green = int(random2)
     blue = int(random3)
     color = color_rgb(red, green, blue)
-    win = GraphWin("Bumpers", 500, 500)
+    win = GraphWin("Bumpers", 600, 400)
     win.setBackground(color)
 
     point1 = randint(0, 470)
@@ -85,25 +85,25 @@ def main():
     xory4 = 0
     while 1 == 1:
         #circle 1
-        move_amount = randint(0, 10)
-        xory1 = get_random(xory1, move_amount)
-        xory2 = get_random(xory2, move_amount)
+        move_amount = randint(0, 20)
+        xory1 = get_random(move_amount)
+        xory2 = get_random(move_amount)
 
-        xory3 = get_random(xory3, move_amount)
-        xory4 = get_random(xory4, move_amount)
+        xory3 = get_random(move_amount)
+        xory4 = get_random(move_amount)
         while True:
             if did_collide(circle1, circle2) == True:
                 xory1 = xory1 * -1
                 xory2 = xory2 * -1
                 xory3 = xory3 * -1
                 xory4 = xory4 * -1
-            if hit_vertical(circle1, win) == False:
+            if hit_vertical(circle1, win) == True:
                 xory1 = xory1 * -1
-            if hit_horizontal(circle1, win) == False:
+            if hit_horizontal(circle1, win) == True:
                 xory2 = xory2 * -1
-            if hit_vertical(circle2, win) == False:
+            if hit_vertical(circle2, win) == True:
                 xory3 = xory3 * -1
-            if hit_horizontal(circle2, win) == False:
+            if hit_horizontal(circle2, win) == True:
                 xory4 = xory4 * -1
             circle1.move(xory1, 0)
             circle1.move(0, xory2)
