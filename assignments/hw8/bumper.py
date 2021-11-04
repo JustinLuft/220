@@ -26,7 +26,7 @@ def hit_horizontal(circle, window):
         return True
     else:
         return False
-def didCollide(circle1, circle2):
+def did_collide(circle1, circle2):
     p1 = circle1.getP1()
     p3 = circle2.getP1()
     radius = circle1.getRadius()
@@ -34,9 +34,9 @@ def didCollide(circle1, circle2):
     distancecore = math.sqrt((p1.getX() - p3.getX()) ** 2 + (p1.getY() - p3.getY()) ** 2)
     radiuscom = radius + radius2
     if distancecore <= radiuscom:
-        return False
-    else:
         return True
+    else:
+        return False
 def main():
     random1 = randint(0, 255)
     random2 = randint(0, 255)
@@ -48,11 +48,12 @@ def main():
     win = GraphWin("Bumpers", 500, 500)
     win.setBackground(color)
 
-    point1 = 150
-    point2 = 150
-    point3 = 350
-    point4 = 350
-    circle1 = Circle(Point(point1, point2), 30)
+    point1 = randint(0, 500)
+    point2 = randint(0, 500)
+    point3 = randint(0, 500)
+    point4 = randint(0, 500)
+    radius1 = randint(0, 50)
+    circle1 = Circle(Point(point1, point2), radius1)
     circle1.draw(win)
     random1 = randint(0, 255)
     random2 = randint(0, 255)
@@ -63,7 +64,8 @@ def main():
     color = color_rgb(red, green, blue)
     circle1.setFill(color)
 
-    circle2 = Circle(Point(point3, point4), 30)
+    radius2 = randint(0, 50)
+    circle2 = Circle(Point(point3, point4), radius2)
     circle2.draw(win)
     random1 = randint(0, 255)
     random2 = randint(0, 255)
@@ -83,7 +85,7 @@ def main():
         xory3 = randint(-5, 5)
         xory4 = randint(-5, 5)
         while True:
-            if didCollide(circle1, circle2) == False:
+            if did_collide(circle1, circle2) == True:
                 xory1 = xory1 * -1
                 xory2 = xory2 * -1
                 xory3 = xory3 * -1
@@ -104,4 +106,5 @@ def main():
             circle2.move(0, xory4)
             circle1.move(xory1, 0)
             circle1.move(0, xory2)
-main()
+if __name__ == '__main__':
+    main()
