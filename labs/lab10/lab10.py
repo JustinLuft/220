@@ -93,7 +93,7 @@ def play_game():
     board = build_board()
     display_board(board)
     i = -1
-    while game_over(board):
+    while game_over(board) == False:
         i = i + 1
         if i % 2 == 0:
             player = 'player1'
