@@ -13,20 +13,16 @@ def hit_vertical(circle, win):
     circlexreal = circlex.getX()
     circler = circle.getRadius()
     avoid = winy - 2 * circler
-    if circlexreal < avoid and circlexreal > 0:
-        return False
-    else:
-        return True
+    return not(circlexreal < avoid and circlexreal > 0)
+
 def hit_horizontal(circle, win):
     winx = win.getHeight()
     circley = circle.getP1()
     circleyreal = circley.getY()
     circler = circle.getRadius()
     avoid = int(winx) - 2 * circler
-    if circleyreal < avoid and circleyreal > 0:
-        return False
-    else:
-        return True
+    return not(circleyreal < avoid and circleyreal > 0)
+
 def did_collide(circle1, circle2):
     p_1 = circle1.getP1()
     p_3 = circle2.getP1()
@@ -34,10 +30,8 @@ def did_collide(circle1, circle2):
     radius2 = circle2.getRadius()
     distancecore = math.sqrt((p_1.getX() - p_3.getX()) ** 2 + (p_1.getY() - p_3.getY()) ** 2)
     radiuscom = radius + radius2
-    if distancecore <= radiuscom:
-        return True
-    else:
-        return False
+    return distancecore <= radiuscom
+
 def get_random(move_amount):
     move_amount_neg = move_amount * -1
     moveme = randint(move_amount_neg, move_amount)
