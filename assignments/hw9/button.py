@@ -3,16 +3,19 @@ Button class
 """
 from graphics import *
 class Button:
-    def __init__(self, p1x, p1y, p2x, p2y, txt):
-        self.p1x = p1x
-        self.p1y = p1y
-        self.p2x = p2x
-        self.p2y = p2y
-        self.txt = txt
+    def __init__(self, shape, label):
+        self.rec = shape
+        rec1 = shape.getP1()
+        self.p1x = rec1.getX()
+        self.p1y = rec1.getY()
+        rec2 = shape.getP2()
+        self.p2x = rec2.getX()
+        self.p2y = rec2.getY()
+        self.txt = label
     def get_label(self):
         text = str(self.txt)
         return text
-    def drawb(self, win):
+    def draw(self, win):
         clickable = Rectangle(Point(self.p1x, self.p1y), Point(self.p2x, self.p2y))
         clickable.draw(win)
     def set_label(self, win):

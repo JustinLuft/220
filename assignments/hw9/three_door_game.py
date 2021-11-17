@@ -8,25 +8,26 @@ from button import *
 from graphics import *
 winner = randint(1, 3)
 win = GraphWin("Button Game", 500, 500)
-Box1 = Button(340, 275, 455, 350, "Button 1")
-Box1.drawb(win)
+Box1 = Rectangle(Point(340, 275), Point(455, 350))
+Box1 = Button(Box1, "Box 3")
+Box1.draw(win)
 Box1.set_label(win)
-Box2 = Button(200, 275, 315, 350, "Button 2")
-Box2.drawb(win)
+Box2 = Rectangle(Point(200, 275), Point(315, 350))
+Box2 = Button(Box2, "Box 2")
+Box2.draw(win)
 Box2.set_label(win)
-Box3 = Button(60, 275, 175, 350, "Button 3")
-Box3.drawb(win)
+Box3 = Rectangle(Point(60, 275), Point(175, 350))
+Box3 = Button(Box3, "Box 1")
+Box3.draw(win)
 Box3.set_label(win)
 guider = Text(Point(250, 50), "I have a secret door")
 guider.draw(win)
 rules = Text(Point(250, 450), "Click to choose my door")
 rules.draw(win)
 theguess = win.getMouse()
-if winner == 1:
+if winner == 3:
     if Box1.is_clicked(theguess) == True:
-        Box1 = Button(340, 275, 455, 350, "Button 1")
-        Box1.drawb(win)
-        Box1.color_button("green", win)
+        Box1.color_button("lime", win)
         Box1.set_label(win)
         guider.undraw()
         guider = Text(Point(250, 50), "You Win!")
@@ -35,19 +36,15 @@ if winner == 1:
         rules = Text(Point(250, 450), "Click to close")
         rules.draw(win)
     elif Box2.is_clicked(theguess) == True:
-        Box2 = Button(200, 275, 315, 350, "Button 2")
-        Box2.drawb(win)
         Box2.color_button("red", win)
         Box2.set_label(win)
         guider.undraw()
         guider = Text(Point(250, 50), "You Lost!")
         guider.draw(win)
         rules.undraw()
-        rules = Text(Point(250, 450), "Door " + str(winner) + "was my secret door!")
+        rules = Text(Point(250, 450), "Door " + str(winner) + " was my secret door!")
         rules.draw(win)
     elif Box3.is_clicked(theguess) == True:
-        Box3 = Button(60, 275, 175, 350, "Button 3")
-        Box3.drawb(win)
         Box3.color_button("red", win)
         Box3.set_label(win)
         guider.undraw()
@@ -58,8 +55,6 @@ if winner == 1:
         rules.draw(win)
 if winner == 2:
     if Box1.is_clicked(theguess) == True:
-        Box1 = Button(340, 275, 455, 350, "Button 1")
-        Box1.drawb(win)
         Box1.color_button("red", win)
         Box1.set_label(win)
         guider.undraw()
@@ -69,9 +64,7 @@ if winner == 2:
         rules = Text(Point(250, 450), "Door " + str(winner) + " was my secret door!")
         rules.draw(win)
     elif Box2.is_clicked(theguess) == True:
-        Box2 = Button(200, 275, 315, 350, "Button 2")
-        Box2.drawb(win)
-        Box2.color_button("green", win)
+        Box2.color_button("lime", win)
         Box2.set_label(win)
         guider.undraw()
         guider = Text(Point(250, 50), "You Win!")
@@ -80,8 +73,6 @@ if winner == 2:
         rules = Text(Point(250, 450), "Click to close")
         rules.draw(win)
     elif Box3.is_clicked(theguess) == True:
-        Box3 = Button(60, 275, 175, 350, "Button 3")
-        Box3.drawb(win)
         Box3.color_button("red", win)
         Box3.set_label(win)
         guider.undraw()
@@ -90,10 +81,8 @@ if winner == 2:
         rules.undraw()
         rules = Text(Point(250, 450), "Door " + str(winner) + " was my secret door!")
         rules.draw(win)
-if winner == 3:
+if winner == 1:
     if Box1.is_clicked(theguess) == True:
-        Box1 = Button(340, 275, 455, 350, "Button 1")
-        Box1.drawb(win)
         Box1.color_button("red", win)
         Box1.set_label(win)
         guider.undraw()
@@ -103,8 +92,6 @@ if winner == 3:
         rules = Text(Point(250, 450), "Door " + str(winner) + " was my secret door!")
         rules.draw(win)
     elif Box2.is_clicked(theguess) == True:
-        Box2 = Button(200, 275, 315, 350, "Button 2")
-        Box2.drawb(win)
         Box2.color_button("red", win)
         Box2.set_label(win)
         guider.undraw()
@@ -114,9 +101,7 @@ if winner == 3:
         rules = Text(Point(250, 450), "Door " + str(winner) + " was my secret door!")
         rules.draw(win)
     elif Box3.is_clicked(theguess) == True:
-        Box3 = Button(60, 275, 175, 350, "Button 3")
-        Box3.drawb(win)
-        Box3.color_button("green", win)
+        Box3.color_button("lime", win)
         Box3.set_label(win)
         guider.undraw()
         guider = Text(Point(250, 50), "You Win!")
