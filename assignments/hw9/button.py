@@ -16,23 +16,28 @@ class Button:
         text = str(self.text)
         return text
     def draw(self, win):
-        clickable = Rectangle(Point(self.p1x, self.p1y), Point(self.p2x, self.p2y))
+        clickable = self.shape
         clickable.draw(win)
-    def undraw(self, button, text):
-        button.undraw()
-        text.undraw()
-
-    def set_label(self, win):
         centerxbef = self.p1x + self.p2x
         centerx = centerxbef / 2
         centerybef = self.p1y + self.p2y
         centery = centerybef / 2
         textbox = Text(Point(centerx, centery), str(self.text))
         textbox.draw(win)
-    def color_button(self, color, win):
-        clickable = Rectangle(Point(self.p1x, self.p1y), Point(self.p2x, self.p2y))
+        self.textbox = textbox
+
+
+    def undraw(self, button, text):
+        button.undraw()
+        text.undraw()
+
+    def set_label(self, label):
+        newtext = self.textbox
+        newtext.setText(label)
+
+    def color_button(self, color):
+        clickable = self.shape
         clickable.setFill(str(color))
-        clickable.draw(win)
 
     def is_clicked(self, mouseclick):
         mouseclickx = mouseclick.getX()
