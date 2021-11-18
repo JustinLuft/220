@@ -3,17 +3,17 @@ Button class
 """
 from graphics import *
 class Button:
-    def __init__(self, shape, label):
-        self.rec = shape
+    def __init__(self, shape, text):
+        self.shape = shape
         rec1 = shape.getP1()
         self.p1x = rec1.getX()
         self.p1y = rec1.getY()
         rec2 = shape.getP2()
         self.p2x = rec2.getX()
         self.p2y = rec2.getY()
-        self.txt = label
+        self.text = text
     def get_label(self):
-        text = str(self.txt)
+        text = str(self.text)
         return text
     def draw(self, win):
         clickable = Rectangle(Point(self.p1x, self.p1y), Point(self.p2x, self.p2y))
@@ -23,7 +23,7 @@ class Button:
         centerx = centerxbef / 2
         centerybef = self.p1y + self.p2y
         centery = centerybef / 2
-        textbox = Text(Point(centerx, centery), str(self.txt))
+        textbox = Text(Point(centerx, centery), str(self.text))
         textbox.draw(win)
     def color_button(self, color, win):
         clickable = Rectangle(Point(self.p1x, self.p1y), Point(self.p2x, self.p2y))

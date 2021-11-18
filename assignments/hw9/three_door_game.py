@@ -7,7 +7,7 @@ from random import *
 from button import *
 from graphics import *
 winner = randint(1, 3)
-win = GraphWin("Button Game", 500, 500)
+win = GraphWin("Three Door Game", 500, 500)
 Box1 = Rectangle(Point(340, 275), Point(455, 350))
 Box1 = Button(Box1, "Box 3")
 Box1.draw(win)
