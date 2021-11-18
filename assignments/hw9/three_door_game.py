@@ -26,7 +26,7 @@ rules = Text(Point(250, 450), "Click to choose my door")
 rules.draw(win)
 theguess = win.getMouse()
 if winner == 3:
-    if Box1.is_clicked(theguess) == True:
+    if Box1.is_clicked(theguess):
         Box1.color_button("lime", win)
         Box1.set_label(win)
         guider.undraw()
@@ -35,7 +35,7 @@ if winner == 3:
         rules.undraw()
         rules = Text(Point(250, 450), "Click to close")
         rules.draw(win)
-    elif Box2.is_clicked(theguess) == True:
+    elif Box2.is_clicked(theguess):
         Box2.color_button("red", win)
         Box2.set_label(win)
         guider.undraw()
@@ -44,7 +44,7 @@ if winner == 3:
         rules.undraw()
         rules = Text(Point(250, 450), "Door " + str(winner) + " was my secret door!")
         rules.draw(win)
-    elif Box3.is_clicked(theguess) == True:
+    elif Box3.is_clicked(theguess):
         Box3.color_button("red", win)
         Box3.set_label(win)
         guider.undraw()
@@ -54,7 +54,7 @@ if winner == 3:
         rules = Text(Point(250, 450), "Door " + str(winner) + " was my secret door!")
         rules.draw(win)
 if winner == 2:
-    if Box1.is_clicked(theguess) == True:
+    if Box1.is_clicked(theguess):
         Box1.color_button("red", win)
         Box1.set_label(win)
         guider.undraw()
@@ -63,7 +63,7 @@ if winner == 2:
         rules.undraw()
         rules = Text(Point(250, 450), "Door " + str(winner) + " was my secret door!")
         rules.draw(win)
-    elif Box2.is_clicked(theguess) == True:
+    elif Box2.is_clicked(theguess):
         Box2.color_button("lime", win)
         Box2.set_label(win)
         guider.undraw()
@@ -72,7 +72,7 @@ if winner == 2:
         rules.undraw()
         rules = Text(Point(250, 450), "Click to close")
         rules.draw(win)
-    elif Box3.is_clicked(theguess) == True:
+    elif Box3.is_clicked(theguess):
         Box3.color_button("red", win)
         Box3.set_label(win)
         guider.undraw()
@@ -82,7 +82,7 @@ if winner == 2:
         rules = Text(Point(250, 450), "Door " + str(winner) + " was my secret door!")
         rules.draw(win)
 if winner == 1:
-    if Box1.is_clicked(theguess) == True:
+    if Box1.is_clicked(theguess):
         Box1.color_button("red", win)
         Box1.set_label(win)
         guider.undraw()
@@ -91,7 +91,7 @@ if winner == 1:
         rules.undraw()
         rules = Text(Point(250, 450), "Door " + str(winner) + " was my secret door!")
         rules.draw(win)
-    elif Box2.is_clicked(theguess) == True:
+    elif Box2.is_clicked(theguess):
         Box2.color_button("red", win)
         Box2.set_label(win)
         guider.undraw()
@@ -100,7 +100,7 @@ if winner == 1:
         rules.undraw()
         rules = Text(Point(250, 450), "Door " + str(winner) + " was my secret door!")
         rules.draw(win)
-    elif Box3.is_clicked(theguess) == True:
+    elif Box3.is_clicked(theguess):
         Box3.color_button("lime", win)
         Box3.set_label(win)
         guider.undraw()

@@ -18,6 +18,10 @@ class Button:
     def draw(self, win):
         clickable = Rectangle(Point(self.p1x, self.p1y), Point(self.p2x, self.p2y))
         clickable.draw(win)
+    def undraw(self, button, text):
+        button.undraw()
+        text.undraw()
+
     def set_label(self, win):
         centerxbef = self.p1x + self.p2x
         centerx = centerxbef / 2
