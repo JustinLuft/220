@@ -13,22 +13,25 @@ class Button:
         self.p2y = rec2.getY()
         self.text = text
     def get_label(self):
-        text = str(self.text)
+        text = self.text
         return text
     def draw(self, win):
         clickable = self.shape
         clickable.draw(win)
+        self.clickable = clickable
         centerxbef = self.p1x + self.p2x
         centerx = centerxbef / 2
         centerybef = self.p1y + self.p2y
         centery = centerybef / 2
-        textbox = Text(Point(centerx, centery), str(self.text))
+        textbox = Text(Point(centerx, centery), self.text)
         textbox.draw(win)
         self.textbox = textbox
 
 
-    def undraw(self, button, text):
-        button.undraw()
+    def undraw(self):
+        shape = self.clickable
+        text = self.textbox
+        shape.undraw()
         text.undraw()
 
     def set_label(self, label):
