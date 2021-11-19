@@ -1,7 +1,9 @@
 """
-Button class
+button.py
+Button class for the three door game
+I certify that this code is written by me, Justin Luft
 """
-from graphics import *
+from graphics import Text, Point
 class Button:
     def __init__(self, shape, label):
         self.shape = shape
@@ -54,16 +56,14 @@ class Button:
         rec2 = shape.getP2()
         p2x = rec2.getX()
         p2y = rec2.getY()
-        if p1x >= p2x:
-            if mouseclickx <= p1x and mouseclickx >= p2x:
+        if p1x >= p2x and mouseclickx <= p1x and mouseclickx >= p2x:
                 if p1y >= p2y:
                     if mouseclicky <= p1y and mouseclicky >= p2y:
                         return True
                 elif p2y >= p1y:
                     if mouseclicky < p2y and mouseclicky > p1y:
                         return True
-        elif p2x >= p1x:
-            if mouseclickx <= p2x and mouseclickx >= p1x:
+        elif p2x >= p1x and mouseclickx <= p2x and mouseclickx >= p1x:
                 if p2y >= p1y:
                     if mouseclicky <= p2y and mouseclicky >= p1y:
                         return True

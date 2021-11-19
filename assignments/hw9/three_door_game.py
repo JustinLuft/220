@@ -3,9 +3,9 @@ three_door_game.py
 A three door random game
 I certify that this code is entirely written by me, Justin Luft
 """
-from random import *
-from button import *
-from graphics import *
+from random import randint
+from button import Button
+from graphics import GraphWin, Rectangle, Point, Text
 def main():
     winner = randint(1, 3)
     win = GraphWin("Three Door Game", 500, 500)
