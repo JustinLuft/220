@@ -29,7 +29,6 @@ class Button:
         clickable.draw(win)
         textbox = self.textbox
         textbox.draw(win)
-        self.textbox = textbox
 
     def undraw(self):
         shape = self.shape
