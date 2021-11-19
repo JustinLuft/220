@@ -3,9 +3,9 @@ Button class
 """
 from graphics import *
 class Button:
-    def __init__(self, shape, text):
+    def __init__(self, shape, label):
         self.shape = shape
-        self.text = text
+        self.text = label
         rec1 = shape.getP1()
         p1x = rec1.getX()
         p1y = rec1.getY()
@@ -16,28 +16,28 @@ class Button:
         centerx = centerxbef / 2
         centerybef = p1y + p2y
         centery = centerybef / 2
-        textbox = Text(Point(centerx, centery), self.text)
-        self.textbox = textbox
+        text = Text(Point(centerx, centery), self.text)
+        self.text = text
 
     def get_label(self):
-        text = self.textbox
+        text = self.text
         text = text.getText()
         return text
 
     def draw(self, win):
         clickable = self.shape
         clickable.draw(win)
-        textbox = self.textbox
+        textbox = self.text
         textbox.draw(win)
 
     def undraw(self):
         shape = self.shape
-        text = self.textbox
+        text = self.text
         shape.undraw()
         text.undraw()
 
     def set_label(self, label):
-        newtext = self.textbox
+        newtext = self.text
         newtext.setText(label)
 
     def color_button(self, color):
