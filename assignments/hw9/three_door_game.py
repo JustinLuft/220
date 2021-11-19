@@ -1,7 +1,7 @@
 """
 three_door_game.py
 A three door random game
-I certify that this code is entirely written by me
+I certify that this code is entirely written by me, Justin Luft
 """
 from random import *
 from button import *
