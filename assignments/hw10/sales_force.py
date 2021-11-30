@@ -5,15 +5,7 @@ I certify that this code is written by me, Justin Luft
 from sales_person import SalesPerson
 class SalesForce:
     def __init__(self):
-        slist = []
-        mlist = []
-        infile = open("salesData.txt", "r")
-        for line in infile:
-            line = line.split(",")
-            saleperson = SalesPerson(int(line[0]), str(line[1]))
-            slist = saleperson.get_id(), saleperson.get_name(), saleperson.get_sales()
-            mlist.append(slist)
-            self.sales_people = mlist
+        self.sales_people = []
 
     def add_data(self, file_name):
         infile = open(file_name, "r")
