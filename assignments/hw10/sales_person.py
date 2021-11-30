@@ -38,8 +38,7 @@ class SalesPerson:
         print(total)
         if total >= quota:
             return True
-        else:
-            return False
+        return False
 
     def compare_to(self, other):
         total = 0
@@ -50,8 +49,7 @@ class SalesPerson:
             return -1
         elif total > salesy:
             return 1
-        elif total == salesy:
-            return 0
+        return 0
 
     def __str__(self):
         total = 0
