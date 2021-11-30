@@ -24,7 +24,6 @@ class SalesPerson:
 
     def total_sales(self):
         acc = 0
-        sales = self.sales
         for i in self.sales:
             acc = acc + i
         return float(acc)
