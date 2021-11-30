@@ -16,7 +16,7 @@ def main():
     sleep(2)
     greeting_txt = Text(Point(250, 50), "Happy Valentines Day!")
     greeting_txt.setSize(20)
-    greeting_txt.setTextColor("yellow")
+    greeting_txt.setTextColor("Yellow")
     greeting_txt.setStyle("bold")
     greeting_txt.draw(win)
     acc = 0
